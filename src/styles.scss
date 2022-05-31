@@ -1,0 +1,76 @@
+// --------------------------
+// VARIABLES
+// --------------------------
+// $maincolor: black;
+// $contrastcolor: white;
+
+// @mixin white-text-black-bg {
+//   color: $contrastcolor;
+//   background-color: $maincolor;
+// }
+
+// @mixin black-text-white-bg {
+//   color: $maincolor;
+//   background-color: $contrastcolor;
+// }
+
+.App {
+background-color: #ACD1AF
+}
+// --------------------------
+// Header
+// --------------------------
+
+nav {
+  // @include white-text-black-bg;
+  // display: flex;
+  // justify-content: flex-start;
+
+  // a {
+  //   @include white-text-black-bg;
+
+  //   div {
+  //     margin: 10px;
+  //     font-size: large;
+  //   }
+  // }
+}
+section,
+div {
+  form {
+    input, select {
+      // @include white-text-black-bg;
+      padding: 10px;
+      font-size: 1.1em;
+      margin: 10px;
+
+      &[type="submit"]:hover {
+        // @include black-text-white-bg;
+      }
+    }
+  }
+}
+
+button#delete {
+  // @include white-text-black-bg;
+  display: block;
+  margin: auto;
+  font-size: 1.3em;
+  padding: 10px;
+}
+
+// .nav-img{
+//   width: 100px;
+
+// }
+
+.footer{
+  background-color: #8AA78C;
+}
+
+// img {
+//   width: 300px;
+//   height: 300px;
+//   border-radius: 90px;
+//   object-fit: cover;
+// }
