@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+
+
 export default function New({createMeal}) {
     const navigate = useNavigate();
     const [newForm, setNewForm] = useState({
@@ -44,28 +46,29 @@ export default function New({createMeal}) {
                 <input 
                     type="text" 
                     name="name"
-                    placeholder="name"
+                    placeholder="Name"
                     value={newForm.name}
                     onChange={handleChange}
                 />
                 <input 
                     type="text" 
                     name="description"
-                    placeholder="description"
+                    placeholder="Description"
                     value={newForm.description}
                     onChange={handleChange}
                 />
                 <input 
                     type="number" 
+                    inputmode="decimal"
                     name="time"
-                    placeholder="time"
+                    placeholder="Cook Time"
                     value={newForm.time}
                     onChange={handleChange}
                 />
                   <input 
                     type="text" 
                     name="ingredients"
-                    placeholder="ingredients"
+                    placeholder="Ingredients"
                     value={newForm.ingredients}
                     onChange={handleChange}
                 />

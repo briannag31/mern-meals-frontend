@@ -4,6 +4,7 @@ import Index from "../pages/Index"
 import Show from "../pages/Show"
 import New from "../pages/New"
 import Recipes from "../pages/Recipes"
+import Welcome from "../pages/Welcome"
 
 export default function Main() {
 
@@ -59,9 +60,10 @@ export default function Main() {
     }, []);
 
     return (
-        <main>
+        <main className="main">
             <Routes>
-                <Route path="/" element={<Index meal={meal}/>} />
+                 <Route path="/" element={<Welcome />}/>   
+                <Route path="/meals" element={<Index meal={meal}/>} />
                 <Route path="/meals/:id" element={
                     <Show 
                         meal={meal} 
@@ -75,7 +77,7 @@ export default function Main() {
                        />
                     } />
                      <Route path="/meals/recipes" element={
-                    <Recipes />
+                    <Recipes recipeList={recipeList} />
                     } />
             </Routes>
         </main>

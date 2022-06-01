@@ -43,7 +43,7 @@ div {
       padding: 10px;
       font-size: 1.1em;
       margin: 10px;
-
+      border-radius:2em;
       &[type="submit"]:hover {
         // @include black-text-white-bg;
       }
@@ -51,13 +51,41 @@ div {
   }
 }
 
-button#delete {
-  // @include white-text-black-bg;
-  display: block;
-  margin: auto;
-  font-size: 1.3em;
-  padding: 10px;
+input{
+  width: 90vw;
+
 }
+
+select{
+  width: 92vw;
+
+}
+
+button{
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:0 0.3em 0.3em 0;
+  border-radius:2em;
+  width: 250px;
+  height: 40px;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-weight:1000;
+  font-size: large;
+  color:#FFFFFF;
+  background-color:#9FB9A1;
+  text-align:center;
+  transition: all 0.2s;
+  }
+ button:hover{
+  background-color:#CDE3CF;
+  }
+  // @media all and (max-width:30em){
+  //  a.button3{
+  //   display:block;
+  //   margin:0.2em auto;
+  //  }
+  // }
 
 // .nav-img{
 //   width: 100px;
@@ -74,3 +102,15 @@ button#delete {
 //   border-radius: 90px;
 //   object-fit: cover;
 // }
+
+.home{
+  background: url("https://i.imgur.com/5NRdFAw.png");
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 1px;
+}

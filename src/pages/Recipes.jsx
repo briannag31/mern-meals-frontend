@@ -17,7 +17,10 @@ const Recipes = (props) => {
     setRecipes(data)
     
   }
-// need to add search box related to the ingredient variable
+
+
+
+// need to add search box related to the ingredient variable -- look at movie project
 
  useEffect(() => {
      getRecipe()

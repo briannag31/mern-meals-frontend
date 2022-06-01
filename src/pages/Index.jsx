@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Header from "../components/Header"
 
 function Index({meal}) {
     const loaded = () =>{
@@ -9,14 +10,24 @@ function Index({meal}) {
                 <h2>{recipe.name}</h2>
               </Link>
             </div>
-          ))
+          )
+          )
         }
         const loading = () => {
-            return <h1>Loading...</h1>
+            return (
+              <>
+            <Header />
+            <h1>Loading...</h1>
+            </>
+            )
+
           }
         
           return (
-            meal ? loaded() : loading()
+            <>
+            <Header />
+           { meal ? loaded() : loading()}
+            </>
           )
         }
 
