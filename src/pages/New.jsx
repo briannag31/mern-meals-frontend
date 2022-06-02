@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import Header from "../components/Header";
 
 
 export default function New({createMeal}) {
@@ -32,6 +33,8 @@ export default function New({createMeal}) {
         }
 
     return (
+        <>
+        <Header />
         <div className="new-meal">
             <form onSubmit={handleSubmit}>
                 <select name="day" onChange={handleChange} value={newForm.day}>
@@ -75,5 +78,6 @@ export default function New({createMeal}) {
                 <button type="submit">Add New Meal</button>
             </form>
         </div>
+        </>
     )
 }

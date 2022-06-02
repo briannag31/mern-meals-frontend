@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import Header from "../components/Header"
 
-const Recipes = (props) => {
+const Recipes = ({recipeList}) => {
   const apiKey = "e61e9a21648e4ecea611937d92a2c146"
   const params = useParams()
   const ingredient = params.ingredient
-  const url = `https://api.spoonacular.com/recipes/search?query=${ingredient}&apiKey=${apiKey}&number=20`
+  const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredient}&number=30&ranking=2&ignorePantry=true&apiKey=${apiKey}`
 
-
+  //https://api.spoonacular.com/recipes/findByIngredients?ingredients=chocolate&number=30&ranking=2&ignorePantry=true&apiKey=e61e9a21648e4ecea611937d92a2c146
 
   const [recipes, setRecipes] = useState(null)
 
@@ -17,10 +18,24 @@ const Recipes = (props) => {
     setRecipes(data)
     
   }
+  const [recipeFormState, setRecipeFormState] = useState({ingredient: ""});
+
+  const handleChange = (event) => {
+      const newState = {...recipeFormState}
+      newState[event.target.name] = event.target.value
+      setRecipeFormState(newState)
 
 
 
-// need to add search box related to the ingredient variable -- look at movie project
+  };
+
+  const handleSubmit = (event) => {
+      event.preventDefault()
+      recipeList(recipeFormState.ingredient)
+      setRecipeFormState(
+          {ingredient: ""}
+      )
+  }
 
  useEffect(() => {
      getRecipe()
@@ -30,9 +45,9 @@ const Recipes = (props) => {
     return (
       <div>
         <h1>{ingredient}</h1>
-        <h2>{recipes.results.title}</h2>
-        <img src={recipes.results.image} alt={recipes.results.title} />
+        <h2>{recipeList.title}</h2>
       </div>
+ 
     )
   }
 
@@ -40,7 +55,22 @@ const Recipes = (props) => {
     return <h1>Loading...</h1>
   }
 
-  return recipes ? loaded() : loading()
+  return(
+    <>
+    <Header />
+    <div>
+        <form onSubmit={handleSubmit}>
+            <input 
+            type="text" 
+            name="ingredient" 
+            onChange={handleChange}
+            value={recipeFormState.ingredient}/>
+            <input type="submit" value="Sumbit" />
+        </form>
+    </div>
+    {recipes ? loaded() : loading()}
+    </>
+    )
 }
 
 export default Recipes

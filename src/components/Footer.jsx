@@ -13,7 +13,7 @@ function Footer(props) {
     return (
         <nav style={footerStyle} className="footer">
               <Link to="/index">
-              <i class="fa-solid fa-fork-knife fa-3x"></i>
+              <i className="fa-solid fa-fork-knife fa-3x"></i>
             </Link> 
             <Link to="/meals/new">
             <i style={iconStyle} className="fa-solid fa-plus fa-3x"></i>
