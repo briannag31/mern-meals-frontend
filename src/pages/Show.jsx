@@ -1,12 +1,13 @@
 import { useParams, useNavigate } from "react-router";
 import { useState } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Show({meal, updateMeal, deleteMeal}) {
 
     const { id } = useParams();
     const recipe = meal.find(recipe => recipe._id === id);
     const navigate = useNavigate();
-
     const [editForm, setEditForm] = useState(recipe);
 
     const handleChange = evt => {
@@ -19,17 +20,19 @@ export default function Show({meal, updateMeal, deleteMeal}) {
     const handleSubmit = evt => {
         evt.preventDefault();
         updateMeal(editForm, id);
-        navigate('/');
+        navigate('/meals');
     };
 
     const removeMeal = () => {
         deleteMeal(id);
-        navigate('/');
+        navigate('/meals');
     }
 
 
     return (
-        <div className="meal">
+        <>
+        <Header />
+        <div >
             <h1>{recipe.day}</h1>
             <h4>Name: <br /> {recipe.name}</h4>
             <h4>Description: {recipe.description}</h4>
@@ -87,5 +90,7 @@ export default function Show({meal, updateMeal, deleteMeal}) {
             </button>
             </form>
         </div>
+        <Footer />
+        </>
     )
 }

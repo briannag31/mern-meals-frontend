@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 
 export default function New({createMeal}) {
@@ -78,6 +79,7 @@ export default function New({createMeal}) {
                 <button type="submit">Add New Meal</button>
             </form>
         </div>
+        <Footer />
         </>
     )
 }

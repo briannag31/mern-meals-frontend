@@ -3,8 +3,8 @@ import { useState, useEffect } from "react"
 import Index from "../pages/Index"
 import Show from "../pages/Show"
 import New from "../pages/New"
-import Recipes from "../pages/Recipes"
 import Welcome from "../pages/Welcome"
+import Recipes from "../pages/Recipes"
 
 export default function Main() {
 
@@ -18,16 +18,6 @@ export default function Main() {
     }
 
     const createMeal = async recipe => {
-        await fetch(URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'Application/json'
-            },
-            body: JSON.stringify(recipe),
-        });
-        getMeal();
-    };
-    const recipeList = async recipe => {
         await fetch(URL, {
             method: 'POST',
             headers: {
@@ -71,14 +61,12 @@ export default function Main() {
                         updateMeal={updateMeal}
                        />
                     } />
-                     <Route path="/meals/new" element={
+                 <Route path="/meals/new" element={
                     <New 
                         createMeal={createMeal}
                        />
                     } />
-                     <Route path="/meals/recipes" element={
-                    <Recipes recipeList={recipeList} />
-                    } />
+                  <Route path="/meals/recipes" element={<Recipes />}/> 
             </Routes>
         </main>
     )

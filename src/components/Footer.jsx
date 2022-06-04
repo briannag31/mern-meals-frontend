@@ -1,25 +1,16 @@
 import { Link } from "react-router-dom"
 function Footer(props) {
-  const footerStyle = {
-    width: "100%",
-    height: "75px",
-    margin: "auto",
-    position: "absolute",
-    bottom: "0",
-  };
-  const iconStyle ={
-   paddingLeft: "15px"
-  }
     return (
-        <nav style={footerStyle} className="footer">
-              <Link to="/index">
-              <i className="fa-solid fa-fork-knife fa-3x"></i>
+        <nav className="footer">
+              <Link to="/meals">
+              <img className="footerImg person" src="https://i.imgur.com/vSjcddv.png?2" alt="Click to all meals" />
             </Link> 
             <Link to="/meals/new">
-            <i style={iconStyle} className="fa-solid fa-plus fa-3x"></i>
+            <img className="footerImg" src="https://i.imgur.com/TUF0MZN.png?1" alt="Click to add new meal" />
             </Link> 
+
             <Link to="/meals/recipes">
-            <i style={iconStyle} className="fa-solid fa-lightbulb fa-3x"></i>
+            <img className="footerImg" src="https://i.imgur.com/quScvLP.png?1" alt="Click to get recipe ideas" />
             </Link> 
         </nav>
     )

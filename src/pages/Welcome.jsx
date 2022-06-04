@@ -1,3 +1,12 @@
+import { Link } from "react-router-dom"
+
 export default function Welcome (){
-return <section className="home"></section>
+return (
+<Link to={'/meals'}>
+<section className="home"></section>)
+</Link>
+)
 }
+
+
+
